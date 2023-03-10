@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>property3</title>
+    <link rel="shortcut icon" href="images/hotel.png">
+    <link rel="stylesheet" href="property.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <ul class="tab-navigation3">
+            <li>About</li>
+            <li>Floor Plan</li>
+            <li>Map</li>
+        </ul>
+        <div class="main" >
+            <img id="mainImg" src="images/bpino0.jpg" alt="">
+        </div>
+        <!--adding thumnail images-->
+        <ul class="thumbs">
+            <li onclick="thumbChange(0)"><img src="images/bpino0.jpg" alt=""></li>
+            <li onclick="thumbChange(1)"><img src="images/bpino1.jpg" alt=""></li>
+            <li onclick="thumbChange(2)"><img src="images/bpino2.jpg" alt=""></li>
+            <li onclick="thumbChange(3)"><img src="images/bpino3.jpg" alt=""></li>
+            <li onclick="thumbChange(4)"><img src="images/bpino4.jpg" alt=""></li>
+            <li onclick="thumbChange(5)"><img src="images/bpino5.jpg" alt=""></li>
+        </ul>
+        <div class="tab-container-area">
+            <div class="tab-container3">
+                <p>
+                    A one bedroom, one bathroom apartment in the very popular west end quay development - westcliffe apartments, located on the third floor with 24 hour 
+                    concierge and lifts access to all floors. the property is conveniently located close to a wealth of transport facilities including paddington station (heathrow express), 
+                    lancaster gate tube station (central line) and edgware road tube station. (bakerloo line). hyde park and oxford street are also nearby. available 3rd february 2023.
+                </p>
+            </div>
+            <div class="tab-container3">
+                <img src="images/floorplan3.png" alt="">
+            </div>
+            <!--adding property google map-->
+            <div class="tab-container3">
+                <p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17172.378978467168!2d-0.1364313646461999!3d51.495731760002315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876051ec5ec47d3%3A0xd8715d8b30be303f!2sThe%20Windermere%20Hotel%2C%20London!5e0!3m2!1sen!2slk!4v1672337970016!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    /* main section for the rooms with selection*/
+    $(document).ready(function(){
+        $('.tab-container:first').show()
+        $('.tab-navigation li:first').addClass('active')
+        $('.tab-navigation li').click(function(event){
+            index = $(this).index();
+            $('.tab-navigation li').removeClass('active');
+            $(this).addClass('active');
+            $('.tab-container').hide();
+            $('.tab-container').eq(index).show();
+        })
+        $('.tab-container2:first').show()
+        $('.tab-navigation2 li').click(function(event){
+            index = $(this).index();
+            $('.tab-navigation2 li').removeClass('active');
+            $(this).addClass('active');
+            $('.tab-container2').hide();
+            $('.tab-container2').eq(index).show();
+        })
+        $('.tab-container3:first').show()
+        $('.tab-navigation3 li').click(function(event){
+            index = $(this).index();
+            $('.tab-navigation3 li').removeClass('active');
+            $(this).addClass('active');
+            $('.tab-container3').hide();
+            $('.tab-container3').eq(index).show();
+        })
+        $('.tab-container4:first').show()
+        $('.tab-navigation4 li').click(function(event){
+            index = $(this).index();
+            $('.tab-navigation4 li').removeClass('active');
+            $(this).addClass('active');
+            $('.tab-container4').hide();
+            $('.tab-container4').eq(index).show();
+        })
+    });
+    /*script for thumnail img*/
+    function thumbChange(num){
+        var thumb = 'images/bpino' + num + '.jpg';
+        document.getElementById("mainImg").src = thumb;
+    }  
+</script>
+</html>

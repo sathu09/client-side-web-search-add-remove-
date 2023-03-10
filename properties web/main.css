@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+}
+body{
+    min-height: 100px;
+}
+/*navigation bar*/
+.side-bar{
+    background-color: rgb(29, 28, 28);
+    backdrop-filter: rgb(92, 92, 223);
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: o;
+    left: -100%;
+    overflow-y: auto;
+}
+.side-bar.active{
+    left: 0;
+}
+.side-bar .menu{
+    width: 200px;
+    margin-top: 80px;
+
+}
+.side-bar .menu .item{
+    position: relative;
+    cursor: pointer;
+}
+.side-bar .menu .item a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+    padding: 5px 30px;
+    line-height: 60px;
+}
+.side-bar .menu .item a:hover{
+    background: rgb(42, 42, 42);
+    transition: 0.3s ease;
+
+}
+.side-bar .menu .item i{
+    margin-right: 10px;
+}
+.side-bar .menu .item a .dropdown{
+    position: absolute;
+    right: 0;
+    margin: 15px;
+    transition: 0.3s ease;
+}
+.side-bar .menu .item .sub-menu{
+    background: rgb(12, 12, 12);
+    display: none;
+}
+.side-bar .menu .item .sub-menu a{
+    padding-left: 70px;
+    font-size: 15px;
+}
+.rotate{
+    transform: rotate(90deg);
+}
+.close-btn{
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    margin: 25px;
+    right: 0;
+    cursor: pointer;
+}
+.menu-btn{
+    position: absolute;
+    color: white;
+    margin: 25px;
+    font-size: 30px;
+    cursor: pointer;
+}
+.detail{
+    padding-left: 350px;
+    padding-top: 70px;
+}
+.emoji1{
+    float: right;
+    margin-left: 0px 0px 0px 30px;
+    width: 500px;
+    height: 500px;
+}
+.room-img{
+    width: 600px;
+    height: 300px;
+}
+.tab-container1{
+    padding-left: 350px;
+    padding-top: 50px;
+    width: 1000px;
+}
+.view, view:visited {
+    background-color: #776a6a;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 350px;
+    margin-top: 20px;
+}
+.view:hover, views:active {
+    background-color: rgb(60, 58, 58);
+}
+.container{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    width: max-content;
+}
+/*adding to favourite */
+.card{
+    border: 1px solid black;
+    width: max-content;
+    text-align: center;
+    display: inline-block;
+    margin: 5px;
+}
+.card img{
+    width: 300px;
+    padding: 5px;
+}
+.title{
+    font-weight: bold;
+    margin: 10px;
+}
+button{
+    border: 2px solid rgb(121, 33, 33);
+    background: rgb(59, 59, 94);
+    color: white;
+    font-weight: bold;
+    margin: 20px;
+    padding: 5px 10px;
+}
+button:hover{
+    box-shadow: 0 0 5px 5px rgb(221, 174, 87) inset;
+}
+.cart{
+    width: 250px;
+    float: right;
+    text-align: center;
+    border: 1px solid black;
+    overflow-y: scroll;
+    height: 100%;
+}
+.cartImg > img{
+    width: 200px;
+}
+form{
+    border: #fff;
+    border-radius: 2px solid ;
+}
+/*home page animation*/
+.content{
+    text-align: center;
+    padding-top: 20px;
+    animation:float 3s linear infinite;	
+}
+@keyframes float{
+    0%, 100%{
+      transform: translateY(0rem);
+    }
+    50%{
+      transform: translateY(3rem);
+    }
+}
+.content h1{
+    font-size: 60px;
+    color: #fff;
+    font-weight: 400;
+
+}
+.content a {
+    text-decoration: none;
+    display: inline block;
+    color: white;
+    font-size: 14px;
+    border: 2px solid white;
+    padding: 14px 70px;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+.video-back{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.navimg{
+    height: 170px;
+    width: 80%;
+    padding-left: 300px;
+
+}
+
+/*contact us page*/
+.contact-text h4{
+	color: white;
+    margin: 18px 0;
+	font-size: 20px;
+	font-weight: 600;
+	font-family: cursive;
+    padding-left: 400px;
+}
+.contact-text h2{
+	font-size: 40px;
+	line-height: 1;
+}
+.list{
+	margin-bottom: 2.8rem;
+	padding-left: 400px;
+}
+.list li{
+	margin-bottom: 12px;
+}
+.list li a{
+	display: block;
+	color: orangered;
+	font-size: 20px;
+	transition: all .85s ease;
+}
+/*. color transparant..*/
+.list li a:hover{
+	color: white;
+	transform: translateX(15px);
+}
+/*adding media quaries*/
+@media (max-width: 1480px){
+	header{
+		padding: 12px 2.5%;
+		transition: .1s;
+	}
+	section{
+		padding: 110px 3% 60px;
+	}
+    select{
+        width: 50px;
+    }
+}
+@media (max-width: 1000px){
+    body{
+
+        width: 1200px;
+    }
+    select{
+        font-size: 10px;
+    }
+    option{
+        width: 10px;
+    }
+}
+
+

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+    <link rel="shortcut icon" href="images/hotel.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <title>Find your property </title>
+</head>
+<body>
+    <!--navigation bar-->
+    <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="side-bar"> 
+        <div class="close-btn">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="menu">
+            <div class="item"><a href="home.html"><i class="fas fa-desktop"></i>Home</a></div>
+            <div class="item">
+                <a class="sub-btn"><i class="fas fa-table"></i>Search <i class="fas fa-angle-right dropdown"></i> </a>
+                <div class="sub-menu">
+                    <a href="main.html" class="sub-item">Properties</a>
+                </div>
+            </div>
+            <div class="item"><a href="contactUs.html"><i class="fas fa-info-circle"></i>Contact us</a></div>
+        </div>
+    </div>
+    <img src="images/navimg.webp" class="navimg" alt="">
+    <!--number of rooms select-->
+    <img src="images/emoji2.jpg" class="emoji1" alt="">
+    <div class="detail">
+        <h1>Hello, you can choose your properties..</h1>
+        <br> <br>
+        <div class="inline">
+            <h3>Min Bedrooms:</h3>
+            <input id="spinner" value="0">
+            <h3>Max Bedrooms:</h3>
+            <input id="spinner2" value="5">
+        </div>
+        <br>
+        <!--property type selection -->
+        <br>
+        <h3>Select a property type:-  </h3>
+        <select name="delievery" onchange="countryList() " id="subject" name="subject">
+            <option value="Flat">Flat</option>
+            <option value="House">House</option>
+            <option value="Any" selected>Any</option>
+        </select>
+        <br> <br>
+        <!--postal code -->
+        <form>
+            Postal code:- <input type="text" id="myText" name="postal_code" >
+        </form>
+        <br><br>
+        <!--property date time added filter-->
+        <div class="Time">
+            <h3>Time Added</h3>
+            <select name="delievery" onchange="countryList() " id="subject" name="subject">
+                <option value="January", "Feburary", "March", "April"> January - April (2022)</option>
+                <option value="May", "June", "July", "August">May - August (2022)</option>
+                <option value="September", "October", "November", "December">September - December (2021)</option>
+                <option value="Anytime" selected>Anytime</option>
+            </select>
+        </div>
+        <br>
+        <!--price range slidebar-->
+        <p class="box">  
+            <h3>Price Range</h3>
+            <input type="text" id="amount" readonly class="goldSliderText">
+        </p>
+        <br>
+        <div id="slider-range"></div>
+        <br>
+        <br>
+        <button id="Search">Search</button> 
+        <div id="Placeholder"></div>
+        
+    </div>
+        <!--adding favourite to cart side -->
+    <div class="cart" id="cart">
+        <div class="title">Favourite card List</div><hr>
+        <div id="title"></div>
+    </div>
+    <div class="properties">
+        <!--property1-->
+        <div>
+            <div class="tab-container1" id="item1">
+                <img class="room-img" src="images/room1.jpeg" alt="">
+                <div class="title">Single luxury</div>
+                <div>
+                    <label class="inline">size:-</label> 
+                    <select name="delievery" onchange="countryList() " id="subject" name="subject">
+                        <option value="small">small</option>
+                        <option value="medium">medium</option>
+                        <option value="large">large</option>
+                    </select>
+                    <p>
+                    Refurbished contemporary raised ground floor 1 double bed flat with high ceilings to let on fashionable chepstow road. beautifully furnished with fully-fitted
+                    semi open plan kitchen, solid oak floors and double glazing thoughout and its own private paved back garden. available 10/12/22 a well-presented bright and airy 
+                    1 bedroom flat with high ceilings and its own garden on fashionable chepstow road. it is on the ground floor and has recently been completely refurbished to the 
+                    highest modern standards. this great contemporary living space has solid oak floors laid over two layers of modern accoustic dampening materials, so they have 
+                    excellent sound insulation, as do the other floors in the building. it also has double glazing throughout on all windows so you will be warm and there will be 
+                    minimal noise from outside. the flat has a wall mounted 32inch flat screen tv, large sofa, orthopaedic mattress, fitted wardrobes, dining table and chairs and fully 
+                    tiled bathroom with excellent water pressure. the fully tiled semi-open plan kitchen has a large fridge freezer, gas cooker, washer/dryer, dishwasher and plenty of cupboard space.
+                    </p>
+                </div>
+                <a href="property1.html" class="view">view the property</a>
+                <button onclick="addToCart(item1)">add to card</button>
+            </div>
+        </div>  
+    
+        <!--property2-->
+        <div>
+            <div class="tab-container1" id="item2">
+                <img class="room-img" src="images/room2.jpeg" alt="">
+                <div class="title">Single delux room</div>
+                <div>
+                    <label>size:-</label> 
+                    <select name="delievery" onchange="countryList() " id="subject" name="subject">
+                        <option value="small">small</option>
+                        <option value="medium">medium</option>
+                        <option value="large">large</option>
+                    </select>
+                    <p>
+                        If you’re looking for Student Accommodation in Nottingham, then look no further. The Student Lodge offers contemporary, high-quality student accommodation in a superb location, chosen for 
+                        its proximity to universities and access to shops and other facilities to support a student’s day-to-day needs.The Student Lodge is packed with excellent facilities and is fully furnished.
+                        All you need to do is turn up, check in and make the place your own.
+                    </p>
+                </div>
+                <a href="property2.html" class="view">view the property</a>
+                <button onclick="addToCart(item2)">add to card</button>
+            </div>
+    
+        </div>
+    
+        <!--property3-->  
+        <div>
+            <div class="tab-container1" id="item3">
+                <img class="room-img" src="images/room3.jpeg" alt="">
+                <div class="title">Studio type single room</div>
+                <div>
+                    <label>size:-</label> 
+                    <select name="delievery" onchange="countryList() " id="subject" name="subject">
+                        <option value="small">small</option>
+                        <option value="medium">medium</option>
+                        <option value="large">large</option>
+                    </select>
+                    <p>
+                        This room type generally comes with a bed, wardrobe and a study area. It is usually located within a large flat with two rooms or more. The bathrooms, kitchens and living areas are always shared. 
+                        If you hate feeling lonely, this is the ideal choice for you!  Your living room will become your haven where you can share a cup of coffee and chatter away with your flatmates anytime. 
+                    </p>
+                </div>
+                <a href="property3.html" class="view">view the property</a>
+                <button onclick="addToCart(item3)">add to card</button>
+            </div>
+        </div> 
+    
+        <!--property4--> 
+        <div>
+            <div class="tab-container1" id="item4">
+                <img class="room-img" src="images/room4.jpeg" alt="">
+                <div class="title">Executive En-suite</div>
+                <div>
+                    <label>size:-</label> 
+                    <select name="delievery" onchange="countryList() " id="subject" name="subject">
+                        <option value="small">small</option>
+                        <option value="medium">medium</option>
+                        <option value="large">large</option>
+                    </select>
+                    <p>
+                        hese rooms are also located within multiple bedroom flats; they are usually fully furnished with a bed, wardrobe, and study area. The word en-suite in the room means that the bathroom is private per room.
+                        Living in this type of room, you will have access to a shared living area and a shared kitchen; however, you will also enjoy quality time without any disturbance in your room. Plus, you won’t have to wait in 
+                        line to freshen up every morning before your lectures. 
+                    </p>
+                </div>
+                <a href="property4.html" class="view" >view the property</a>
+                <button onclick="addToCart(item4)">add to card</button>
+            </div>
+        </div>  
+    
+        <!--property5-->
+        <div>
+            <div class="tab-container1" id="item5">
+                <img class="room-img" src="images/room5.jpeg" alt="">
+                <div class="title">Premiour delux studio</div>
+                <div>
+                    <label>size:</label> 
+                    <select name="delievery" onchange="countryList() " id="subject" name="subject">
+                        <option value="small">small</option>
+                        <option value="medium">medium</option>
+                        <option value="large">large</option>
+                    </select>
+                    <p>
+                        Do you love the idea of a studio, but you don’t like how small they are? Choose a flat as your student room. Flats are generally fully furnished apartments with plenty of space where you can find a separate bathroom, kitchen,
+                         bedroom and living area. You will have more chores to do in a flat like sweeping, vacuuming, dusting, etc.; however, as they say, no sweet without sweat! 
+                    </p>
+                </div>
+                <a href="property5.html" class="view" >view the property</a>
+                <button onclick="addToCart(item5)">add to card</button>
+            </div>
+        </div>  
+    
+        <!--property6-->
+        <div>
+            <div class="tab-container1" id="item6">
+                <img class="room-img" src="images/room6.jpeg" alt="">
+                <div class="title">Duplex studio</div>
+                <div>
+                    <label>size:-</label> 
+                    <select name="delievery" onchange="countryList() " id="subject" name="subject">
+                        <option value="small">small</option>
+                        <option value="medium">medium</option>
+                        <option value="large">large</option>
+                    </select>
+                    <p>
+                        Nothing is better than studying with a friend and living together! Remember Rachel and Monica? If you and your friend are ready to jump on the plane together, then book a twin room. 
+                        Twin rooms usually have twice the number of beds, workspaces, and a double wardrobe to fit all your clothes together. They will definitely help you form an unbreakable bond with your best friend, 
+                        and you will have enough memories to last a lifetime. 
+                    </p>    
+                </div>
+                <a href="property6.html" class="view" >view the property</a>
+                <button onclick="addToCart(item6)">add to card</button>
+            </div>
+        </div> 
+        
+        <!--property7-->
+        <div>
+            <div class="tab-container1" id="item7">
+                <img class="room-img" src="images/room7.jpeg" alt="">
+                <div class="title">Execuite single</div>
+                <div>
+                    <label>size:</label> 
+                    <select name="delievery" onchange="countryList() " id="subject" name="subject">
+                        <option value="small">small</option>
+                        <option value="medium">medium</option>
+                        <option value="large">large</option>
+                    </select>
+                    <p>
+                        this room accommodates three to 4 people together; it is also called a dorm room. Up for an adventure where you get used to different minds and cultures, choose this room type. Whoever you end up with 
+                        within this student room, you are bound to share a lot together and grow closer by the end of the year. Furniture in this room type usually differ with 3,4 beds, a workspace or more and a wardrobe or no 
+                        wardrobe at all, so ask around. 
+                    </p>
+                </div>
+                <a href="property7.html" class="view" >view the property</a>
+                <button onclick="addToCart(item7)">add to card</button>
+            </div>
+        </div>   
+    </div> 
+
+</body>
+<script>
+    /* slide navigation bar */
+    $(document).ready(function(){
+        $('.sub-btn').click(function(){
+            $(this).next('.sub-menu').slideToggle();
+            $(this).find('.dropdown').toggleClass('rotate');
+        });
+
+        $('.menu-btn').click(function(){
+            $('.side-bar').addClass('active')
+        })
+
+        $('.close-btn').click(function(){
+            $('.side-bar').removeClass('active')
+        })
+    });
+    /*script for add favourite & remove favourite card */
+    var addItemId = 0;
+    function addToCart(item){
+        addItemId += 1;
+        var selectedItem = document.createElement('div');
+        selectedItem.classList.add('cartImg');
+        selectedItem.setAttribute('id',addItemId);
+        var img = document.createElement('img');
+        img.setAttribute('src',item.children[0].currentSrc);
+        var title = document.createElement('div');
+        title.innerText = item.children[1].innerText;
+        var label = document.createElement('div');
+        label.innerText = item.children[2].children[0].innerText;
+        var select = document.createElement('span');
+        select.innerText = item.children[2].children[1].value;
+        label.append(select);
+        var delBtn = document.createElement('button');
+        delBtn.innerText = 'Remove';
+        delBtn.setAttribute('onclick', 'del('+addItemId+')');
+        var cartItems = document.getElementById('title')
+        selectedItem.append(img);
+        selectedItem .append(title);
+        selectedItem .append(label);
+        selectedItem .append(delBtn);
+        cartItems.append(selectedItem);
+    }
+    function del(item){
+        document.getElementById(item).remove();
+    }
+
+    /*min & max*/
+    $(function() {
+	$("#spinner").spinner({
+		min: 0,
+		max: 12,
+		spin: function(event, ui) {
+			$(this).change();
+		}
+	});
+    });
+    $(function() {
+	$("#spinner2").spinner({
+		min: 0,
+		max: 12,
+		spin: function(event, ui) {
+			$(this).change();
+		}
+	});
+    });
+    /*select the property type*/
+    $(function() {
+	  $("#property").selectmenu();
+    });
+
+    $(function() {
+	  $("#time").selectmenu();
+    });
+
+    /*slidebar price range*/
+    $(function() {
+	$("#slider-range").slider({
+		range:true,
+		min: 50000,
+		max: 500000,
+		values: [ 75, 300 ],
+		slide: function( event, ui ){
+			$("#amount").val( "£" + ui.values[ 0 ] + " - £" + ui.values[ 1 ] );
+		}
+	});
+	$("#amount").val(" £" + $(" #slider-range").slider( "values", 0 ) + " - £" + $("#slider-range").slider( "values", 1 ) );
+    });
+    $(function() {
+	$( "#Search" ).on("click", function(){
+		
+		var propType = $("#property").val();
+	    var maxBed =  $("#spinner").val();
+        var minBed =  $("#spinner2").val();
+		var date =  $("#time").val();
+		var minPrice = $("#slider-range").slider("option", "values")[0];
+		var maxPrice = $("#slider-range").slider("option", "values")[1];
+		
+		var output="<ul>";
+		   for (var i in data.properties) {
+			   if (( propType == data.properties[i].type) || (propType=="Any"))
+			   if (( minBed >= data.properties[i].bedrooms && maxBed <= data.properties[i].bedrooms ))
+			   if (( date == data.properties[i].added.month) || (date=="Anytime"))
+			   if (( data.properties[i].price >= minPrice && data.properties[i].price <= maxPrice ))
+			   {
+				   {
+					   {
+						   {
+							   output+="<h2><li>" + "£" + data.properties[i].price +"</li></h2>" + "<img src=" + data.properties[i].picture + ">" + "<p>" + data.properties[i].description + "</p>" + "<button><a href='" + data.properties[i].url + "'>Visit Page</a></button>";
+						   } } } } }
+				output+="</ul>";
+				document.getElementById( "Placeholder" ).innerHTML = output;
+		   });
+	});	
+    
+
+    /*calling property as id*/
+    var data = { 
+        "properties": [
+            {
+                "id":"item1",
+                "type":"Flat",
+                "bedrooms":2,
+                "price":120000,
+                "tenure":"Freehold",
+                "url": "./property1.html",    
+                "added": {
+                    "month":"September",
+                    "day":14,
+                    "year":2022
+                }
+            },
+            {
+                "id":"item2",
+                "type":"Flat",
+                "bedrooms":3,
+                "price":100000,
+                "tenure":"Freehold",
+                "url": "property1",    
+                "added": {
+                    "month":"September",
+                    "day":14,
+                    "year":2022
+                }
+            },
+            {
+                "id":"item3",
+                "type":"Flat",
+                "bedrooms":4,
+                "price":400000,
+                "tenure":"Freehold",
+                "url": "property1",    
+                "added": {
+                    "month":"january",
+                    "day":14,
+                    "year":2022
+                }
+            },
+            {
+                "id":"item4",
+                "type":"Flat",
+                "bedrooms":2,
+                "price":400000,
+                "tenure":"Freehold",
+                "url": "property1", 
+                "added": {
+                    "month":"June",
+                    "day":10,
+                    "year":2022
+                }
+            },
+            {
+                "id":"item5",
+                "type":"Flat",
+                "bedrooms":2,
+                "price":400000,
+                "tenure":"Freehold",
+                "url": "property1", 
+                "added": {
+                    "month":"August",
+                    "day":17,
+                    "year":2021
+                }
+            },
+            {
+                "id":"item6",
+                "type":"Flat",
+                "bedrooms":2,
+                "price":400000,
+                "tenure":"Freehold",
+                "url": "property1", 
+                "added": {
+                    "month":"March",
+                    "day":27,
+                    "year":2022
+                }
+            }
+    ]};
+
+</script>
+</html>

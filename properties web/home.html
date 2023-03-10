@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties</title>
+    <link rel="shortcut icon" href="images/hotel.png">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+        <!--drop down Navigation bar-->
+    <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+
+    </div>
+    <div class="side-bar"> 
+        <div class="close-btn">
+            <i class="fas fa-times"></i>
+
+        </div>
+        <div class="menu">
+            <div class="item"><a href="home.html"><i class=""></i>Home</a></div>
+            <div class="item">
+                <a class="sub-btn"><i class=""></i>Search <i class="fas fa-angle-right dropdown"></i> </a>
+                <div class="sub-menu">
+                    <a href="main.html" class="sub-item">Properties</a>
+                </div>
+            </div>
+            <div class="item"><a href="contactUs.html"><i class=""></i>Contact us</a></div>
+
+
+        </div>
+    </div>
+    <!--adding video-->
+    <video autoplay loop muted plays-inline class="video-back">
+        <source src="images/key1.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+        <h1>Welcome to Westminster's Rent a property</h1>
+        <br><br>
+        <a href="main.html">lets find a property</a>
+
+    </div>
+
+
+    
+</body>
+<script>
+    /*script for navigation bar*/
+    $(document).ready(function(){
+        $('.sub-btn').click(function(){
+            $(this).next('.sub-menu').slideToggle();
+            $(this).find('.dropdown').toggleClass('rotate');
+        });
+        $('.menu-btn').click(function(){
+            $('.side-bar').addClass('active')
+        })
+        $('.close-btn').click(function(){
+            $('.side-bar').removeClass('active')
+        })
+    });
+
+</script>
+</html>

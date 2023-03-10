@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/hotel.png">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        body {
+            background-image: url('images/contact.jpg');
+        }
+        .con-1{
+            padding-top: 80px;
+            padding-left: 450px;
+        }
+        
+        h2{
+            font-family: 'Times New Roman', Times, serif;
+            color: white;
+            padding-left: 450px;
+            padding-top: 100px;
+        }
+        .button{
+            display: none;
+            font-size: 20px;
+            border: none;
+            background-color: #3b4d61;
+            color: rgb(245, 243, 243);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        script{
+            display: none;
+        }
+        .txt{
+            color: black;
+            background-color: rgb(236, 226, 226);
+            width: 200px;
+        }
+        .txt-2{
+            width: 700px;
+        }
+        .pageEditor{
+            color: rgb(5, 5, 5);
+            font-weight: bold;
+        }
+        .conimg{
+            width: 100%;
+            height: 200px;
+        }
+        </style>
+
+</head>
+<body>
+    <!--Navigation bar-->
+    <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+
+    </div>
+    <div class="side-bar"> 
+        <div class="close-btn">
+            <i class="fas fa-times"></i>
+
+        </div>
+        <div class="menu">
+            <div class="item"><a href="home.html"><i class=""></i>Home</a></div>
+            <div class="item">
+                <a class="sub-btn"><i class=""></i>Search <i class="fas fa-angle-right dropdown"></i> </a>
+                <div class="sub-menu">
+                    <a href="main.html" class="sub-item">Properties</a>
+                </div>
+            </div>
+            <div class="item"><a href="contactUs.html"><i class=""></i>Contact us</a></div>
+
+
+        </div>
+    </div>
+    <!--complain form details -->
+    <h2>If you want to any questions related to students room contact with us... </h2>
+    <form action="" name="query" class="con-1">
+        <p id="form">
+            <label for="name">Name of the Student </label> <input type="text" name='name' id="name" class="txt">
+            <br><br>
+            <label for="email">University Email adress</label> <input type="text" name='email' id="email" class="txt">
+            <br><br>
+            <label>Select a related questions  </label>
+
+            <select name="delievery" onchange="countryList() " id="subject" name="subject">
+                <option value="About room">About room</option>
+                <option value="About facilities">About facilities </option>
+                <option value="Travalling issues" selected>Travalling issues </option>
+                <option value="Other" selected>Other</option>
+            </select>
+            <br><br>
+            <label for="details">Type a valid questions about the student...</label>
+            <br><br>
+            <textarea name="" id="detail" cols="100" rows="10" class="txt txt-2"></textarea>
+
+            <button type="button" style="display:block;" class="button button-2" id="btn1"
+                onclick="validation(query)">send & view complain</button>
+        </p>
+
+        <div id="set" style="display: none;">
+            <fieldset>
+                <p id="confirm"></p>
+                <button type="button" class="button" id="btn2" onclick="edit()">Edit</button>
+                <button type="button" class="button" id="btn3" onclick="send()">Send</button>
+            </fieldset>
+        </div>
+        <br><br>
+    </form>
+    <!--personal details -->
+    <div class="contact-text">
+        <h2>Contact <span>us!</span></h2>
+        <h4>If You Have Any Problem in your Mind feel free to contact mee...</h4>
+        <div class="list">
+            <li><a href="#">+94-0779991273</a></li>
+            <li><a href="#">sathursh.20210092@iit.ac.lk</a></li>
+            <li><a href="#">Colombo,Srilanka </a></li>
+        </div>
+    </div>
+    <!--footer image-->
+    <img src="images/contact.jpeg" class="conimg" alt="">
+</body>
+<script>
+    /* slide navigation bar */
+    $(document).ready(function(){
+        $('.sub-btn').click(function(){
+            $(this).next('.sub-menu').slideToggle();
+            $(this).find('.dropdown').toggleClass('rotate');
+        });
+        $('.menu-btn').click(function(){
+            $('.side-bar').addClass('active')
+        })
+        $('.close-btn').click(function(){
+            $('.side-bar').removeClass('active')
+        })
+    });
+    /* contact us form */
+    function validation() {
+            var valid1 = document.query.name.value;
+            var valid2 = document.query.email.value;
+            var valid3 = document.query.subject.value;
+            var valid4 = document.getElementById("detail").value;
+
+            if (valid1 == "" && valid2 == "" && valid3 == "" && valid4 == "") {
+                alert("Name, email address, query subject and query details fields are missing");
+            } else if (valid2 == "" && valid3 == "" && valid4 == "") {
+                alert("email address, query subject and query details fields are missing");
+            } else if (valid1 == "" && valid3 == "" && valid4 == "") {
+                alert("Name, query subject and query details fields are missing");
+            } else if (valid3 == "" && valid4 == "") {
+                alert("query subject and query details fields are missing");
+            } else if (valid1 == "" && valid2 == "" && valid4 == "") {
+                alert("Name, email address and query details fields are missing");
+            } else if (valid1 == "" && valid2 == "" && valid3 == "") {
+                alert("Name, email addres and query subject fields are missing");
+            } else if (valid2 == "" && valid4 == "") {
+                alert("Email addres and query details fields are missing");
+            } else if (valid2 == "" && valid3 == "") {
+                alert("Email addres and query subject fields are missing");
+            } else if (valid1 == "" && valid2 == "") {
+                alert("Name and email addres  fields are missing");
+            } else if (valid1 == "" && valid3 == "") {
+                alert("Name and query subject fields are missing");
+            } else if (valid1 == "" && valid4 == "") {
+                alert("Name and query details fields are missing");
+            } else if (valid1 == "") {
+                alert("Name fields is missing");
+            } else if (valid2 == "") {
+                alert("Email addres fields is missing");
+            } else if (valid3 == "") {
+                alert("query subject fields is missing");
+            } else if (valid4 == "") {
+                alert("query details fields is missing");
+            } else {
+                document.getElementById("set").style.display = "block";
+                document.getElementById("form").style.display = "none";
+                document.getElementById("confirm").innerHTML = "Name : " + valid1 + "<br>Email : " + valid2 + "<br>Subject : " + valid3 + "<br>Details : " + valid4;
+                document.getElementById("btn2").style.display = "inline";
+                document.getElementById("btn3").style.display = "inline";
+            }
+        }
+
+        function edit() {
+            document.getElementById("confirm").innerHTML = "";
+            document.getElementById("btn2").style.display = "none";
+            document.getElementById("btn3").style.display = "none";
+            document.getElementById("form").style.display = "block";
+            document.getElementById("set").style.display = "none";
+
+        }
+
+
+        function send() {
+            var details = document.forms[0].elements;
+            var info = "Name : " + details.name.value + "<br>Email : " + details.email.value + "<br>Subject : " + details.subject.value + "<br>Details : " + details.detail.value;
+
+            document.forms[0].action = 'mailto:sathursh.20210092@iit.ac.lk?&body=' + info;
+            document.forms[0].submit();
+
+            document.getElementById("confirm").innerHTML = "Email sent";
+            document.getElementById("btn2").style.display = "none";
+            document.getElementById("btn3").style.display = "none";
+        }
+</script>
+</html>
